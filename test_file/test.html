@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+       <script>
+            function rand(min, max) 
+            { 
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            var a = document.getElementById('test4');
+            
+       </script>
+    </head>
+    <body>
+        <form action="/test_file/test2.php" method="POST">
+            
+            gd: <input type="text" name="test1" id="test1">
+            <input type="text" name="test2" id="test2">
+            <input type="text" name="test3" id="test3">
+            <input type="hidden" name="test4" id="test4">
+            
+            <input type="submit" name="test111" id="test111">
+        
+        </form>
+        
+    </body>
+</html>
