@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>여정 선택</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+    
+ 
+  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+  <link href="favicon.ico" rel="shortcut icon">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+  <!--부트스트랩-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap CSS File -->
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Libraries CSS Files -->
+  <link href="../css/font.css" rel="stylesheet">
+  <link href="../lib/animate-css/animate.min.css" rel="stylesheet">
+  
+  <!-- Main Stylesheet File -->
+  <link href="../css/mainstyle.css" rel="stylesheet">
+
+   <!--button css-->
+   <link rel="stylesheet" href="../css/button.css">
+  
+<!-- =======================================================
+  Theme Name: Imperial
+  Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  Author: BootstrapMade.com
+  Author URL: https://bootstrapmade.com
+======================================================= -->
+<style>
+    .ul {
+        list-style: none;
+        margin-right: 20px;
+        width: 150px;
+        font-size: 25px;
+    }
+    .select{
+        width: 130px;
+        height: 60px;
+        background-color: rgb(138, 175, 199);
+        color: white;
+        border-style: none;
+        border-radius: 20px;
+        margin-left: 950px;
+        margin-bottom: 40px;
+    }
+    .select:hover{
+        background-color: rgb(163, 209, 205);
+    }
+</style>
+
+</head>
+
+<body>
+
+  <div id="preloader"></div>
+  
+<!--==========================
+  Hero Section
+============================-->
+  <section id="hero">
+    <div class="hero-container">
+
+        <form action="/test_file/test2.php" method="POST">
+            <!-- <form action="/test_file/test2.php" method="POST">
+                
+                gd: <input type="text" name="test1" id="test1">
+                <input type="text" name="test2" id="test2">
+                <input type="text" name="test3" id="test3">
+                <input type="hidden" name="test4" id="test4">
+                
+                <input type="submit" name="test111" id="test111">
+            
+            </form>-->
+            </form>
+
+            <!--여정 선택-->
+            <div class="container">
+                <ul class="list-group" style="width: 350px;">
+                    <li class="list-group-item list-group-item-dark"
+                    style="background-color: #d3d3d4; padding: 17px; font-size: 22px;
+                            margin-bottom: 25px; margin-left: -85px; border: none;">
+                        여정 선택</li>
+                </ul>
+            </div>
+
+            <!--선택-->
+            <form action="/test_file/test2.php" name='form1' method='post'>
+                <input type='hidden' name='id' value='test'>
+                <center><table style="margin-top: 125px; margin-bottom: 160px;">
+                <td><li class="ul">출발지역<br><br><select name = 'f1' id = 'f1' class="one" >
+                                <option>인천</option>
+                                <option>김포</option>
+                                <option>부산</option>                            
+                             </select>
+                </td>             
+    
+                <td><li class="ul">도착지역<br><br><select name = 'f2' id = 'f2' >
+                                <option>나리타</option>
+                                <option>하네다</option>
+                                <option>간사이</option>                            
+                            </select>
+                </td>
+    
+                <td><li class="ul">출발시간<br><br><select name = 'f3' id = 'f3' >
+                                <option>07 : 00</option>
+                                <option>11 : 00</option>
+                                <option>18 : 00</option>                            
+                            </select>
+                </td>
+                <td><li class="ul">도착시간<br><br><select name = 'f4' id = 'f4' >
+                                <option>09 : 00</option>
+                                <option>13 : 00</option>
+                                <option>20 : 00</option>                            
+                            </select>
+                </td>            
+
+                <td><li class="ul">비행기 편명<br><br><select name = 'f5' id = 'f5' >
+                                    <option>F15_RTX1080</option>
+                                    <option>F18_RTX2080</option>
+                                    <option>F32_RTX3080</option>                            
+                                </select>
+                </td>
+                </table></center>
+
+                <!--선택 버튼-->
+                <input type='submit' class="select" value='선 택 &gt;'>
+                
+    
+                </form>
+
+      
+    </div>
+  </section>
+
+  
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    
+  <!-- Required JavaScript Libraries -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../lib/superfish/hoverIntent.js"></script>
+  <script src="../lib/superfish/superfish.min.js"></script>
+  <script src="../lib/morphext/morphext.min.js"></script>
+  <script src="../lib/wow/wow.min.js"></script>
+  <script src="../lib/stickyjs/sticky.js"></script>
+  <script src="../lib/easing/easing.js"></script>
+  
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="../js/custom.js"></script>
+  
+  <script src="../contactform/contactform.js"></script>
+  
+    
+</body>
+</html>
