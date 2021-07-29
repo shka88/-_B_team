@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>여정 선택</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+    
+ 
+  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+  <link href="favicon.ico" rel="shortcut icon">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+  <!--부트스트랩-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap CSS File -->
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Libraries CSS Files -->
+  <link href="../css/font.css" rel="stylesheet">
+  <link href="../lib/animate-css/animate.min.css" rel="stylesheet">
+  
+  <!-- Main Stylesheet File -->
+  <link href="../css/mainstyle.css" rel="stylesheet">
+
+   <!--button css-->
+   <link rel="stylesheet" href="../css/button.css">
+  
+<!-- =======================================================
+  Theme Name: Imperial
+  Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  Author: BootstrapMade.com
+  Author URL: https://bootstrapmade.com
+======================================================= -->
+<style>
+    .ul {
+        list-style: none;
+        margin-right: 20px;
+        width: 150px;
+        font-size: 25px;
+        color: black;
+    }
+    .select{
+        width: 150px;
+        height: 70px;
+        background-color: steelblue;
+        color: white;
+        border-style: none;
+        border-radius: 20px;
+        margin-left: 1200px;
+        margin-bottom: 40px;
+    }
+    .select:hover{
+        background-color: cornflowerblue;
+    }
+    .two{
+      border-radius: 15px;
+      width: 130px;
+    }
+    .btn{
+      width: 150px;
+      height: 70px;
+      background-color: steelblue;
+      color: white;
+      border-style: none;
+      border-radius: 20px;
+      font-size: 18px;
+    }
+    .btn:hover{
+      background-color:cornflowerblue;
+      color: white;
+    }
+</style>
+
+</head>
+
+<body>
+
+  <div id="preloader"></div>
+  
+<!--==========================
+  Hero Section
+============================-->
+  <section id="hero">
+    <div class="hero-container">
+
+        <form action="/test_file/test2.php" method="POST">
+            <!-- <form action="/test_file/test2.php" method="POST">
+                
+                gd: <input type="text" name="test1" id="test1">
+                <input type="text" name="test2" id="test2">
+                <input type="text" name="test3" id="test3">
+                <input type="hidden" name="test4" id="test4">
+                
+                <input type="submit" name="test111" id="test111">
+            
+            </form>-->
+            </form>
+
+            <!--로고-->
+            <div class="container">
+              <img src="../img/logo_air.png" width="130" style="margin-right: 1000px; margin-bottom: 130px;">
+            </div>
+
+            <!--여정 선택-->
+            <center>
+            <div class="container">
+              <table>
+              <td><img src="../img/캘린더.png" width="60px" style="margin-left: -70px; margin-right: 10px;"></td>
+              <td><h2 style="margin-right: 600px; margin-top: 10px; color: black;">&nbsp;&nbsp;여정 선택</h2></p></td>
+              </table>
+            </div>
+
+              <hr width="50%">
+            </center>
+              
+            <!--선택-->
+            <form action="/Imperial/content/checkin3.php" name='form1' method='post'>
+                <input type='hidden' name='id' value='test'>
+                <center><table style="margin-bottom: 170px;">
+                <td><li class="ul">출발지역<br><br><select name = 'f1' id = 'f1' style="width: 100px; border-radius: 15px;">
+                                <option>인천</option>
+                                <option>김포</option>
+                                <option>부산</option>                          
+                             </select>
+                </td>             
+    
+                <td><li class="ul">도착지역<br><br><select name = 'f2' id = 'f2' style="width: 115px; border-radius: 15px;">
+                                <option>나리타</option>
+                                <option>하네다</option>
+                                <option>간사이</option>                            
+                            </select>
+                </td>
+    
+                <td><li class="ul">출발시간<br><br><select name = 'f3' id = 'f3' class="two">
+                                <option>07 : 00</option>
+                                <option>11 : 00</option>
+                                <option>18 : 00</option>                            
+                            </select>
+                </td>
+                <td><li class="ul">도착시간<br><br><select name = 'f4' id = 'f4' class="two">
+                                <option>09 : 00</option>
+                                <option>13 : 00</option>
+                                <option>20 : 00</option>                            
+                            </select>
+                </td>            
+
+                <td><li class="ul">비행기 편명<br><br><select name = 'f5' id = 'f5' style="width: 200px; border-radius: 15px;">
+                                    <option>F15_RTX1080</option>
+                                    <option>F18_RTX2080</option>
+                                    <option>F32_RTX3080</option>                            
+                                </select>
+                </td>
+                </table></center>
+
+
+                <!--나가기 버튼-->
+                <button type="button" class="btn">&lt; 나가기</button>
+                
+                <!--선택 버튼-->
+                <input type='submit' class="select" value='항공권 검색 &gt;'>
+                
+    
+                </form>
+
+      
+    </div>
+  </section>
+
+  
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    
+  <!-- Required JavaScript Libraries -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../lib/superfish/hoverIntent.js"></script>
+  <script src="../lib/superfish/superfish.min.js"></script>
+  <script src="../lib/morphext/morphext.min.js"></script>
+  <script src="../lib/wow/wow.min.js"></script>
+  <script src="../lib/stickyjs/sticky.js"></script>
+  <script src="../lib/easing/easing.js"></script>
+  
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="../js/custom.js"></script>
+  
+  <script src="../contactform/contactform.js"></script>
+  
+    
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html id="html">
+<head>
+<meta charset="utf-8">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" type="text/css" href="/seat/css/hacademy-cinema.css">
+<!-- <link rel="stylesheet" type="text/css" href="/css/mainstyle.css"> -->
+
+
+<style>
+
+body{
+	margin: 0px;
+	display: table;
+  	width: 100%;
+  	height: 100vh;
+ 	background: url(https://raw.githubusercontent.com/shka88/B_team/main/img/%EB%B9%84%ED%96%89%EA%B8%B0%EC%82%AC%EC%A7%841.png) top center fixed;
+  	background-size: cover;
+  	font-family: 'EliceDigitalBaeum_Bold';
+}
+@font-face {
+  font-family: 'EliceDigitalBaeum_Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.pop_container {
+   
+    width: 1200px;
+    height: 700px;
+    background-color: #ffffff;
+    text-align: center;
+    position: absolute;
+    margin: 0px;
+    top: 17%;
+    left: 15%;
+    border-radius: 30px;
+    
+}
+
+div.left {
+	width: 50%;
+	height: 100%;
+	float: left;
+	box-sizing: border-box;
+	padding: 50px;
+	margin-top: 20px;
+        
+}
+div.right {
+	width: 50%;
+	height: 100%;
+	float: right;
+	position: relative;
+	box-sizing: border-box;
+	vertical-align: middle;
+	/* transform: translate(-10%, 10%); */
+        
+	/* background: rgba(255, 168, 168, 0.616); */
+    }
+div.right_inner {
+	transform: translate(25%, 67%);
+    background-color: #80c4c059;
+    height: 300px;
+	width: 400px;
+	border-radius: 20px;
+	/* padding: 2px; */
+	align-items: center;
+}
+
+.float-box > div{
+	float:left;
+	width:50%;
+}
+.float-box::after{
+	content:"";
+	display: block;
+	clear:both;
+}
+.float-box > .result {
+	padding:0.5rem;
+}
+h2 {
+	color: #3d3d3d;
+}
+
+/* h1{
+	margin: 0px;
+} */
+.logo_inner {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	
+}
+.btn_inner {
+	width: 70px;
+	position: absolute;
+	right: 5%;
+	top: 5%;
+	float:left;
+	/* display:inline-block; */
+}
+
+h1{
+	color: black;
+}
+</style>
+<script src="/seat/js/hacademy-cinema.js"></script>
+<script src="/seat/js/timer.js"></script>
+<script>
+	document.getElementById("html").addEventListener("mousedown", function () {
+		SetTime = 300;
+    });
+</script>
+<script>
+	var view_state = 0;
+	function view_button()
+	{
+		if (view_state == 0)
+		{
+			$("#123").append("<button type='button' id='btn' class='btn btn-success' style='font-size:x-large;'>확인</button>");
+			view_state = 1;
+		}
+		else{
+			$("#btn").remove();
+			view_state = 0;
+		}
+	}
+</script>
+<script>
+	window.addEventListener("load", function(){
+		var cinema = new Hacademy.Reservation("#cinema");
+		cinema.addChangeListener(function(seat){
+			view_button();
+			print(this);
+		});
+		print(cinema);
+		function print(app){
+			document.querySelector(".result").textContent = app.getQueryString();
+			
+		}
+	});
+</script>
+	<!-- <script language="JavaScript">
+	
+		var SetTime = 3;		// 최초 설정 시간(기본 : 초)
+
+		function msg_time() {	// 1초씩 카운트
+			
+			m = Math.floor(SetTime / 60) + " : " + (SetTime % 60);	// 남은 시간 계산
+			
+			var msg = m;
+			
+			document.all.ViewTimer.innerHTML = msg;		// div 영역에 보여줌 
+					
+			SetTime--;					// 1초씩 감소
+			
+			if (SetTime < 0) {			// 시간이 종료 되었으면..
+				
+				clearInterval(tid);		// 타이머 해제
+				alert("시간이 초과되어 처음 화면으로 돌아갑니다.");
+				document.location.href="../index.html";
+				
+			}
+			
+		}
+
+		window.onload = function TimerStart(){ tid=setInterval('msg_time()',1000) };
+		
+	</script> -->
+</head>
+
+<body>
+
+<div class="jquery-script-clear"></div>
+<div class="wrapper">
+	<div class="inner">
+		<div class="logo_inner">
+			<img src="../img/logo_air.png" width="100" >
+		</div>
+		<div class="btn_inner">            
+			<div><img src="../img/timer.png" width="60"><h2 id="ViewTimer" style="color: black; margin: 0px;"></h1></div>
+			<!-- <h1><div id="ViewTimer"></div></h1> -->
+		</div>
+		<!-- <div class="timer">
+			<h1><div id="ViewTimer"></div></h1>
+		</div> -->
+		
+	</div>
+  <div class="pop_container">
+	  <div class="left">
+		  <h1>좌석을 선택해 주세요</h1>
+		<form action="example.html" method="get">
+			<div id="cinema" class="cinema-wrap" data-name="seat">
+				<!-- <div class="cinema-screen">Front</div> -->
+				<div class="cinema-seat-area" data-rowsize="6" data-colsize="7" data-mode="client" data-fill="manual" data-seatno="visible" data-choice="single">
+					<div class="cinema-seat" data-row="1" data-col="1" data-state="disabled" ></div>
+					<div class="cinema-seat" data-row="1" data-col="2"></div>
+					<div class="cinema-seat" data-row="1" data-col="3"></div>
+					<div class="cinema-seat" data-row="1" data-col="4" data-state="space"></div>
+					<div class="cinema-seat" data-row="1" data-col="5" ></div>
+					<div class="cinema-seat" data-row="1" data-col="6"></div>
+					<div class="cinema-seat" data-row="1" data-col="7"></div>
+
+					<div class="cinema-seat" data-row="2" data-col="1"></div>
+					<div class="cinema-seat" data-row="2" data-col="2"></div>
+					<div class="cinema-seat" data-row="2" data-col="3" data-state="disabled"></div>
+					<div class="cinema-seat" data-row="2" data-col="4" data-state="space"></div>
+					<div class="cinema-seat" data-row="2" data-col="5" ></div>
+					<div class="cinema-seat" data-row="2" data-col="6"></div>
+					<div class="cinema-seat" data-row="2" data-col="7"></div>
+					
+					<div class="cinema-seat" data-row="3" data-col="1"></div>
+					<div class="cinema-seat" data-row="3" data-col="2"></div>
+					<div class="cinema-seat" data-row="3" data-col="3"></div>
+					<div class="cinema-seat" data-row="3" data-col="4" data-state="space"></div>
+					<div class="cinema-seat" data-row="3" data-col="5" ></div>
+					<div class="cinema-seat" data-row="3" data-col="6" data-state="disabled"></div>
+					<div class="cinema-seat" data-row="3" data-col="7" data-state="disabled"></div>
+
+					<div class="cinema-seat" data-row="4" data-col="1"></div>
+					<div class="cinema-seat" data-row="4" data-col="2"></div>
+					<div class="cinema-seat" data-row="4" data-col="3"></div>
+					<div class="cinema-seat" data-row="4" data-col="4" data-state="space"></div>
+					<div class="cinema-seat" data-row="4" data-col="5" ></div>
+					<div class="cinema-seat" data-row="4" data-col="6"></div>
+					<div class="cinema-seat" data-row="4" data-col="7"></div>
+
+					<div class="cinema-seat" data-row="5" data-col="1"></div>
+					<div class="cinema-seat" data-row="5" data-col="2"></div>
+					<div class="cinema-seat" data-row="5" data-col="3"></div>
+					<div class="cinema-seat" data-row="5" data-col="4" data-state="space"></div>
+					<div class="cinema-seat" data-row="5" data-col="5" ></div>
+					<div class="cinema-seat" data-row="5" data-col="6"></div>
+					<div class="cinema-seat" data-row="5" data-col="7"></div>
+
+					<div class="cinema-seat" data-row="6" data-col="1"></div>
+					<div class="cinema-seat" data-row="6" data-col="2"></div>
+					<div class="cinema-seat" data-row="6" data-col="3"data-state="disabled"></div>
+					<div class="cinema-seat" data-row="6" data-col="4" data-state="space"></div>
+					<div class="cinema-seat" data-row="6" data-col="5" data-state="disabled"></div>
+					<div class="cinema-seat" data-row="6" data-col="6"></div>
+					<div class="cinema-seat" data-row="6" data-col="7"></div>
+				</div>
+			</div>
+	
+			<!-- <input type="submit" value="선택"> -->
+		</form> 
+	  </div>
+	  
+	  <div class="right">
+		  <div class="right_inner">
+			<br><br>
+			<h1>선택한 좌석</h1>
+			<div>
+				<h2><div class="result"></div></h2>
+				<h2 id="123"></div></h2>
+			</div>
+			
+		  </div>
+		
+
+	  </div>
+  </div>
+  
+  
+
+</div>
+</body>
+</html>
